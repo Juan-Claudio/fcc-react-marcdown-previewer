@@ -9,8 +9,11 @@ export default class Preview extends React.Component
 
     render()
     {
+        const parsed_editor_txt = this.props.parsedTextAreaContent
         return (
-            <div id="preview"></div>
+            <div className="w-75 mt-3">
+                <div id="preview" className="bg-secondary" dangerouslySetInnerHTML={{__html: parsed_editor_txt}}/>
+            </div>
         )
     }
 }

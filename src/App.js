@@ -1,19 +1,19 @@
 import logo from './img/logo.svg'
 import './styles/App.css';
-import Editor from './components/Editor.js'
 import Preview from './components/Preview.js';
+import { Provider } from 'react-redux';
+import { store, EditorContainer, PreviewContainer } from './redux/AppWrapper.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className='App-logo' width={200}/>
-      </header>
-      <main>
-        <Editor />
-        <Preview />
-      </main>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <main className='d-flex flex-column justify-content-center align-items-center'>
+          <EditorContainer />
+          <PreviewContainer />
+        </main>
+      </div>
+    </Provider>
   );
 }
 
