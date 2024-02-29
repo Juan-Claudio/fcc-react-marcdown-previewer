@@ -1,12 +1,34 @@
+:root
+{
+   /*<nav>*/
+   --navHeight: 40px;
+   --navMargin: 5px;
+   --navTotHeight: calc(var(--navHeight) + var(--navMargin));
+   /*<Editor>, <Preview>*/
+   --editorBgColor: rgba(0,0,0,0.75);
+   --editorColor: #fff;
+
+   --previewBgColor: rgba(255,255,255,0.7);
+   --previewColor: #000;
+
+   /*general*/
+   --bordersWidth: 3px;
+   --bordersRadius: 5px;
+}
 html
 {
-   background-color: #e0ebeb;
+   background-color: #8cd8be;
    margin: 0;
-   width:100%; height:100%;
+   width:100vw; height:100vh;
+   overflow: hidden;
 }
-body {
+
+body
+{
    background-color: transparent;
    margin: 0;
+   width:100%; height:100%;
+
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -14,7 +36,62 @@ body {
    -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+nav
+{
+   background-color: rgba(255, 255, 255, 0.55);
+   
+   border-radius: 5px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   margin:var(--navMargin);
+   margin-bottom: 0;
+
+   overflow-x: auto;
+
+   height: var(--navHeight);
+}
+button
+{
+   background-color: transparent;
+   border: none;
+}
+button:nth-child(2) img
+{
+    transform: rotate(90deg);
+}
+
+main
+{
+   width: 100vw;
+   height:calc(100vh - var(--navTotHeight));
+}
+
+pre, code
+{
+   background-color: #333;
+
+   border-radius: 5px;
+   padding:5px;
+   
+   color: #ccc;
    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+}
+
+:not(pre) > code
+{
+   background-color: #666;
+
+   color: #fff;
+}
+
+blockquote
+{
+   border-left: 3px #666 solid;
+   padding-left: 5px;
+   font-style: italic;
+   color:#333;
 }

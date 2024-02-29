@@ -1,0 +1,24 @@
+#Editor-container
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.Editor-left, .Editor-top, .Editor-only{ display:flex; }
+.Editor-left{ width: 50%; height: 100%; }
+.Editor-top{ height: 50%; }
+.Editor-only{ width: 100%; height: 100%; }
+.Editor-none{ display: none; }
+
+#editor
+{
+    background-color: var(--editorBgColor);
+    border: none;
+    border-radius: var(--bordersRadius);
+
+    padding:15px;
+
+    width: 98%; height: 98%;
+
+    color: var(--editorColor);
+}

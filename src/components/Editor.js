@@ -1,3 +1,4 @@
+import '../styles/Editor.css'
 import React from "react";
 
 export default class Editor extends React.Component
@@ -24,7 +25,6 @@ export default class Editor extends React.Component
         this.setState({ textarea_content: event.target.value })
     }
 
-
     componentDidMount()
     {
         this.props.updateParsedTextAreaContent(this.state.textarea_content)
@@ -38,7 +38,7 @@ export default class Editor extends React.Component
     render()
     {
         return (
-            <div id="container_editor" className="mt-3">
+            <div id="Editor-container" className={this.props.disposition[1]}>
                 <textarea id="editor" 
                     onChange={this.handleChange}
                     cols={80}
